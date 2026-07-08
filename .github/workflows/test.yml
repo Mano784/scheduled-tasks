@@ -75,11 +75,8 @@ jobs:
 
       - name: Test Python syntax
         run: python -m py_compile main.py && echo "Python syntax OK"
-
-      - name: Success
-        run: |
-          echo ""
-          echo "========================================"
-          echo "  All checks passed!"
-          echo "  Your setup is ready to go."
-          echo "========================================"
+       - name: Run Birthday Script
+        env:
+          MY_EMAIL: "${{ secrets.MY_EMAIL }}"
+          MY_PASSWORD: "${{ secrets.MY_PASSWORD }}"
+        run: python main.py
