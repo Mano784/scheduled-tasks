@@ -12,8 +12,7 @@ MY_EMAIL = os.environ.get("MY_EMAIL")
 MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
 data = pandas.read_csv("birthdays.csv")
-data.to_dict()
-birthday_dict = {(data_row["month"],data_row["day"]) : data_row for (index,data_row) in data.iterrows()}
+birthday_dict = {(int(row["month"]), int(row["day"])): row for (index, row) in data.iterrows()}
 
 names = data["name"].to_list()
 files = ["letter_1.txt","letter_2.txt","letter_3.txt"]
