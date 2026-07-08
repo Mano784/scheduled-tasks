@@ -75,8 +75,8 @@ jobs:
 
       - name: Test Python syntax
         run: python -m py_compile main.py && echo "Python syntax OK"
-       - name: Run Birthday Script
+      - name: Run Birthday Script
         env:
-          MY_EMAIL: "${{ secrets.MY_EMAIL }}"
-          MY_PASSWORD: "${{ secrets.MY_PASSWORD }}"
+      MY_EMAIL: "${{ secrets.MY_EMAIL }}"
+      MY_PASSWORD: "${{ secrets.MY_PASSWORD }}"
         run: python main.py
