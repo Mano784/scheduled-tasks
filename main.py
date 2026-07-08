@@ -1,12 +1,15 @@
+import os
 ##################### Normal Starting Project ######################
 from datetime import *
 import pandas
 import smtplib
 import random
-my_email = "manonith308@gmail.com"
-password = "xxsn iyje xcnf cnxt"
+
 today = datetime.now()
 today_tuple = (today.month,today.day)
+
+MY_EMAIL = os.environ.get("MY_EMAIL")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
 data = pandas.read_csv("birthdays.csv")
 data.to_dict()
